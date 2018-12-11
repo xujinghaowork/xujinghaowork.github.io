@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="CSS,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言响应式web设计对于解决多类型屏幕问题来说是个不错方案，但从印刷的角度来看，其却存在着很多的困难。没有固定的页面尺寸、没有毫米或英寸，没有任何物理限制，让人感到无从下手。随着建立网站可用的各种小工具越来越多，像素设计局限于桌面和移动端也已经成为历史。因此，现在就让我们来说明一下如何运用响应式web设计的各项基本原则来实现，而不是抗拒流畅的网页体验。为了简单起见，我们将着重讲布局（当然，响应式设">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应式布局">
+<meta property="og:url" content="http://yoursite.com/2018/03/09/2018-03-09-响应式Web设计的基本原则/index.html">
+<meta property="og:site_name" content="AM Blog">
+<meta property="og:description" content="前言响应式web设计对于解决多类型屏幕问题来说是个不错方案，但从印刷的角度来看，其却存在着很多的困难。没有固定的页面尺寸、没有毫米或英寸，没有任何物理限制，让人感到无从下手。随着建立网站可用的各种小工具越来越多，像素设计局限于桌面和移动端也已经成为历史。因此，现在就让我们来说明一下如何运用响应式web设计的各项基本原则来实现，而不是抗拒流畅的网页体验。为了简单起见，我们将着重讲布局（当然，响应式设">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive01.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive02.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive03.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive04.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive05.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive06.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive07.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive08.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsviebg10.jpg">
+<meta property="og:updated_time" content="2018-12-11T07:47:31.556Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应式布局">
+<meta name="twitter:description" content="前言响应式web设计对于解决多类型屏幕问题来说是个不错方案，但从印刷的角度来看，其却存在着很多的困难。没有固定的页面尺寸、没有毫米或英寸，没有任何物理限制，让人感到无从下手。随着建立网站可用的各种小工具越来越多，像素设计局限于桌面和移动端也已经成为历史。因此，现在就让我们来说明一下如何运用响应式web设计的各项基本原则来实现，而不是抗拒流畅的网页体验。为了简单起见，我们将着重讲布局（当然，响应式设">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive01.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/09/2018-03-09-响应式Web设计的基本原则/">
+
+
+
+
+
+  <title>响应式布局 | AM Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AM Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">xujinghao's blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/2018-03-09-响应式Web设计的基本原则/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jinghao Xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/onepiece.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AM Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">响应式布局</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T00:00:00+08:00">
+                2018-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                  分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>响应式web设计对于解决多类型屏幕问题来说是个不错方案，但从印刷的角度来看，其却存在着很多的困难。没有固定的页面尺寸、没有毫米或英寸，没有任何物理限制，让人感到无从下手。随着建立网站可用的各种小工具越来越多，像素设计局限于桌面和移动端也已经成为历史。因此，现在就让我们来说明一下如何运用响应式web设计的各项基本原则来实现，而不是抗拒流畅的网页体验。为了简单起见，我们将着重讲布局（当然，响应式设计远远不止于此）。</p>
+<a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="响应式设计vs适应式设计"><a href="#响应式设计vs适应式设计" class="headerlink" title="响应式设计vs适应式设计"></a>响应式设计vs适应式设计</h3><p>看似相同实则不然。这两种设计方式彼此相辅相成，所以说也没有对错之分。具体情况要依内容而定。</p>
+<p><img src="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive01.gif" alt="avatar" title="响应式设计vs适应式设计"></p>
+<h3 id="内容流"><a href="#内容流" class="headerlink" title="内容流"></a>内容流</h3><p>随着屏幕尺寸越来越小，内容所占的垂直空间也越来越多，也就是说，内容会向下方延伸，这就叫做内容流。如果你习惯了使用像素和点进行设计，可能会觉得这个有点难掌握。不过没关系，习惯了就很好理解了。</p>
+<p><img src="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive02.gif" alt="avatar" title="内容流"></p>
+<h3 id="相对单位"><a href="#相对单位" class="headerlink" title="相对单位"></a>相对单位</h3><p>你的设计对象可能是台式桌面，也可能是移动端屏幕或者介于两者之间的任意屏幕类型。像素密度也会彼此不同，所以我们需要使用灵活可变，并且能够适应各种情况的单位。那么在这种情况下，百分比等相对单位就派上用场了。使用百分比时，我们说宽度50%就是表示宽度占屏幕大小（或者叫视区，也就是指所打开浏览器窗口的大小）的一半。</p>
+<p><img src="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive03.gif" alt="avatar" title="相对单位"></p>
+<h3 id="断点"><a href="#断点" class="headerlink" title="断点"></a>断点</h3><p>断点可以让页面布局在预设的点进行变形，也就是说，在台式桌面上显示3栏，在移动设备上仅显示1栏。大多数CSS属性都可以实现断点之间的变形。断点放置的位置通常取决于内容。比如，如果一句话要换行，你可能就需要加上断点。但断点使用时需要谨慎——如果搞不清内容之间的逻辑关系，很容易弄的一团乱。</p>
+<p><img src="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive04.gif" alt="avatar" title="断点"></p>
+<h3 id="最大和最小值"><a href="#最大和最小值" class="headerlink" title="最大和最小值"></a>最大和最小值</h3><p>有时候内容占满整个屏幕宽度（例如在移动设备上）是好事，但如果相同的内容在电视屏幕上也撑得满满的，貌似就不太合理了。这就是为什么要有最大/最小值。例如，如果宽度为100%，最大宽度1000px，那么内容就会以不超过1000px的宽度填充屏幕。</p>
+<p><img src="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive05.gif" alt="avatar" title="最大和最小值"></p>
+<h3 id="嵌套对象"><a href="#嵌套对象" class="headerlink" title="嵌套对象"></a>嵌套对象</h3><p>还记得相对位置吗？如果一大堆要素彼此都紧密联系，那么必将难以控制。因此，将要素放置到容器中就会让它们变得更加好理解，并且简洁明快。这种情况就需要用到像素之类的静态单位了。静态单位对于logo和按钮等不需要扩展的内容来说非常有用。</p>
+<p><img src="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive06.gif" alt="avatar" title="嵌套对象"></p>
+<h3 id="移动优先还是台式桌面优先"><a href="#移动优先还是台式桌面优先" class="headerlink" title="移动优先还是台式桌面优先"></a>移动优先还是台式桌面优先</h3><p>严格来说，项目从小屏幕入手过渡到大屏幕（移动优先），还是从大屏幕入手过渡到小屏幕（台式桌面优先）区别不大。但是，从移动端着手可以给你带来一些额外的限制，帮助你进行决策。通常情况下大家会从两方面同时着手，所以你还是要看哪种方式最适合你。</p>
+<p><img src="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive07.gif" alt="avatar" title="移动优先还是台式桌面优先"></p>
+<h3 id="web字体vs系统字体"><a href="#web字体vs系统字体" class="headerlink" title="web字体vs系统字体"></a>web字体vs系统字体</h3><p>想让自己的网站拥有炫酷的Futura或Didot效果吗？那就是用web字体吧。尽管web字体看起来很炫酷，但你要记住，这些字体都需要用户下载，字越多，用户加载页面的时间也就越长。另一方面，系统字体加载速度则快得多（前提是用户本机就有），但太过普通。</p>
+<p><img src="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsive08.gif" alt="avatar" title="web字体vs系统字体"></p>
+<h3 id="位图vs矢量图"><a href="#位图vs矢量图" class="headerlink" title="位图vs矢量图"></a>位图vs矢量图</h3><p>你的图标是否有很多细节，并且应用了很多华丽的效果？如果是，那就用位图。如果不是，考虑使用矢量图。如果是位图，使用jpg、png或gif。矢量图则最好使用SVG或图标字体。其各有利弊。但你要时刻牢记图标尺寸——未经过优化的图片不能传到网上。另一方面，矢量图通常比较小，不过部分比较老的浏览器可能不支持矢量图。还有，如果图标有很多曲线，那有可能会比位图还大，所以要明智取舍。</p>
+<p><img src="https://raw.githubusercontent.com/xujinghao/xujinghao.github.io/master/img/responsive/responsviebg10.jpg" alt="avatar" title="位图vs矢量图"></p>
+
+      
+    </div>
+    
+    
+    
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      </div>
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" <i="" class="fa fa-tag"> CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/10/2018-03-10-CSS命名规范/" rel="prev" title="CSS命名规范">
+                CSS命名规范 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/onepiece.jpg" alt="Jinghao Xu">
+            
+              <p class="site-author-name" itemprop="name">Jinghao Xu</p>
+              <p class="site-description motion-element" itemprop="description">Xujinghao's Self Blog</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式设计vs适应式设计"><span class="nav-number">2.1.</span> <span class="nav-text">响应式设计vs适应式设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容流"><span class="nav-number">2.2.</span> <span class="nav-text">内容流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对单位"><span class="nav-number">2.3.</span> <span class="nav-text">相对单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#断点"><span class="nav-number">2.4.</span> <span class="nav-text">断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大和最小值"><span class="nav-number">2.5.</span> <span class="nav-text">最大和最小值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套对象"><span class="nav-number">2.6.</span> <span class="nav-text">嵌套对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动优先还是台式桌面优先"><span class="nav-number">2.7.</span> <span class="nav-text">移动优先还是台式桌面优先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web字体vs系统字体"><span class="nav-number">2.8.</span> <span class="nav-text">web字体vs系统字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位图vs矢量图"><span class="nav-number">2.9.</span> <span class="nav-text">位图vs矢量图</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jinghao Xu</span>
+
+  
+
+  
+  <div class="theme-info">
+    <div class="powered-by"></div>
+    <span class="post-count">博客全站共34.2k字</span>
+  </div>
+</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+    <span class="site-uv">
+      本站访客数<i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      总阅读量<i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script type="text/javascript" src="/js/src/love.js"></script>
+</html>

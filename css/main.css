@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff16c6;
+  background: #229cfb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2908,10 +2908,16 @@ hr {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 25px;
+  background-color: #fff;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .copyright,
 .busuanzi-count {
   text-align: center;
+}
+body {
+  background-image: url("../../images/bottle.jpg");
+  background-size: cover;
+  background-position: center center;
 }

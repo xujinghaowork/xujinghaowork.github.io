@@ -103,7 +103,7 @@
 <meta property="og:image" content="https://github.com/Ge-yuan-jun/gittrends-pwa/blob/master/articles/img/pwa-debugger-2.jpg">
 <meta property="og:image" content="https://github.com/Ge-yuan-jun/gittrends-pwa/blob/master/articles/img/pwa-debugger-3.jpg">
 <meta property="og:image" content="https://github.com/Ge-yuan-jun/gittrends-pwa/blob/master/articles/img/pwa-debugger-4.jpg">
-<meta property="og:updated_time" content="2018-12-11T07:47:06.425Z">
+<meta property="og:updated_time" content="2018-12-11T07:58:29.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="构建离线web应用">
 <meta name="twitter:description" content="关于本文转自公众号前端早读课： 原文地址 译文地址 译者：墨白  前言我喜欢移动app，而且也是那些坚持使用Web技术构建移动应用程序的人之一。 经过技术的不断迭代（可能还有一些其它的东西），移动体验设计愈来愈平易近人，给予用户更好的体验。 而今天，我们就要介绍一个新技术–渐进式 web 应用程序。在理解这个概念并自己尝试了一下之后，我觉得没有必要再做 hybrid 应用了。 正文">
@@ -483,9 +483,12 @@
 <p>Medium在离线状态下展示缓存的数据，一些离线展示在这个分类里面的 app（例如，Instagram）还会提示用户离线了，所以，就不要对这个分类里面的 app 期望再搞了。</p>
 <h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>我的想法是，如果 PWA（或者 service workers）技术成熟并且被大规模应用的话，为什么不节省掉：</p>
 <ol>
-<li>前往应用商店</li>
-<li>下载并不常用的 app<br>呢？</li>
+<li><p>前往应用商店</p>
+</li>
+<li><p>下载并不常用的 app</p>
+</li>
 </ol>
+<p>呢？</p>
 <p>当我们接下来谈到 Web Manifest 时，你就意识到只要给你的 web 应用新增一个桌面 icon，web 应用就可以通过点击这个 icon 实现启动了。</p>
 <p>一些公司已经在 PWA 方面做的比较好了，你可以在这个网址上面找到这些公司：<a href="https://pwa.rocks/" target="_blank" rel="noopener">pwa.rocks</a></p>
 <h2 id="开发准备"><a href="#开发准备" class="headerlink" title="开发准备"></a>开发准备</h2><p>我们已经介绍了足够多的理论知识了。这是一个手把手的教程，来吧，让我们动起手来。首先，按照下面的结构来创建一个新的项目：</p>
@@ -669,7 +672,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
